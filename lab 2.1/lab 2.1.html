@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Data Visualisation" />
+    <meta name="keywords" content="HTML,CSS,D3" />
+    <meta name="author" content="Joshua Sanjay King" />
+    <title>Task 2.1 D3 Data Binding</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        /* Back to Homepage Button */
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 2px solid #000;
+            transition: all 0.3s ease;
+    </style>
+</head>
+<body>
+    <!-- Back to Homepage Button -->
+    <a href="../homepage.html" class="back-button">Back to Homepage</a>
+    <h1>The D3 Journey starts here...</h1>
+
+    <script>
+        // Example from Murray
+        var dataset = [14, 5, 26, 23, 9];
+        var color = d3.color("red");
+        d3.select("body").selectAll("p")
+            .data(dataset)
+            .enter()
+            .append("p")
+            .style("color", function (d) {
+                if (d > 10) {
+                    return "red";
+                }
+            })
+            .text(function (d) {
+                if (d > 10) {
+                    return "Warning: NAME watched " + d + " cat videos today.";
+                }
+                else {
+                    return "NAME watched " + d + " cat videos today.";
+                }
+            });
+    </script>
+
+    <br />
+    <footer style="color:grey">COS30045 Data Visualisation<br /> Joe Bloggs</footer>
+
+</body>
+</html>

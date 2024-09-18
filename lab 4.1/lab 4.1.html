@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Data Visualisation" />
+    <meta name="keywords" content="HTML,CSS,D3" />
+    <meta name="author" content="Joshua Sanjay King" />
+    <title>Task 3.2 D3 Adding Axis to your Charts </title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        /* Back to Homepage Button */
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 2px solid #000;
+            transition: all 0.3s ease;
+        }
+
+        /* Style for images and captions */
+        figure {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+        }
+
+        figcaption {
+            font-size: 14px;
+            color: grey;
+        }
+
+        /* Resize images */
+        img {
+            max-width: 50%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to Homepage Button -->
+    <a href="../homepage.html" class="back-button">Back to Homepage</a>
+
+    <h1>Lab 4.1 Design Studio Activity</h1>
+
+    <h2>Overview</h2>
+    <p>In this lab, you will be given a sample data set and asked to identify the different data and attribute types. You will also think about some questions about this data set that might be answered by a visualisation.</p>
+
+    <p>Make a sketch of how you think your visualisation might look and add to this document.</p>
+
+    <h1>Question 1 - What is the trend in fatalities over the years?</h1>
+    <figure>
+        <img src="question1.jpg" alt="Trend in fatalities over the years">
+        <figcaption>Data used: Number of fatality column, Year column. The trend of car fatalities over the years.</figcaption>
+    </figure>
+
+    <h1>Question 2 - Which state has the highest percentage of accidents?</h1>
+    <figure>
+        <img src="question2.jpg" alt="State with the highest percentage of accidents">
+        <figcaption>Data used: Crash ID column, State column. NSW has the highest percentage of Australia’s state accidents.</figcaption>
+    </figure>
+
+    <h1>Question 3 – Which day of the week has the most number of accidents?</h1>
+    <figure>
+        <img src="question3.jpg" alt="Day of the week with the most accidents">
+        <figcaption>Data used: Crash ID column, Day of the week column. Saturday has the highest number of accidents.</figcaption>
+    </figure>
+
+</body>
+</html>

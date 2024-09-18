@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Data Visualisation" />
+    <meta name="keywords" content="HTML,CSS,D3" />
+    <meta name="author" content="Joshua Sanjay King" />
+    <title>Task 3.2 D3 Adding Axis to your Charts</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        /* Back to Homepage Button */
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 2px solid #000;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to Homepage Button -->
+    <a href="../homepage.html" class="back-button">Back to Homepage</a>
+    <h1>The D3 Journey starts here...</h1>
+    <p> The following is a modified version of original Lab3-2 with axis labels</p>
+
+    <script>
+        var w = 700;  // Width of the SVG container
+        var h = 300;  // Height of the SVG container
+        var padding = 60;  // Padding around the chart for axes and labels
+
+        // Data: Array of pairs [Tree Age, Tree Height]
+        var dataset = [
+            [2, 8],
+            [3, 5],
+            [5, 17],
+            [6, 6],
+            [6, 12],
+            [7, 20],
+            [8, 22],
+            [10, 11],
+            [5, 12],
+            [6, 16]
+        ];
+
+        // Define xScale (for Tree Age)
+        var xScale = d3.scaleLinear()
+            .domain([0, d3.max(dataset, function (d) { return d[0]; })])  // X-axis starts at 0
+            .range([padding, w - padding]);  // Maps data to the width of the SVG
+
+        // Define yScale (for Tree Height)
+        var yScale = d3.scaleLinear()
+            .domain([0, d3.max(dataset, function (d) { return d[1]; })])  // Y-axis starts at 0
+            .range([h - padding, padding]);  // Reversed range to flip the Y-axis (so 0 is at the bottom)
+
+        // Create the SVG container
+        var svg = d3.select("body")
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h);
+
+        // Append circles to the SVG based on data points
+        svg.selectAll("circle")
+            .data(dataset)
+            .enter()
+            .append("circle")
+            .attr("cx", function (d) {
+                return xScale(d[0]);  // X position based on Tree Age
+            })
+            .attr("cy", function (d) {
+                return yScale(d[1]);  // Y position based on Tree Height
+            })
+            .attr("r", 5)  // Circle radius
+            .attr("fill", "slategrey");
+
+        // Append text labels next to each data point
+        svg.selectAll("text")
+            .data(dataset)
+            .enter()
+            .append("text")
+            .text(function (d) {
+                return d[0] + "," + d[1];  // Label shows [Tree Age, Tree Height]
+            })
+            .attr("x", function (d) {
+                return xScale(d[0]) + 10;  // X position slightly offset from the circle
+            })
+            .attr("y", function (d) {
+                return yScale(d[1]) - 10;  // Y position slightly above the circle
+            })
+            .attr("font-family", "sans-serif")
+            .attr("font-size", "12px")
+            .attr("fill", "black");
+
+        // Add x-axis
+        var xAxis = d3.axisBottom()
+            .ticks(5)  // Specify the number of ticks on the x-axis
+            .scale(xScale);  // Apply xScale to the axis
+
+        svg.append("g")
+            .attr("transform", "translate(0," + (h - padding) + ")")  // Position x-axis at the bottom
+            .call(xAxis);
+
+        // Add y-axis
+        var yAxis = d3.axisLeft()
+            .ticks(5)  // Specify the number of ticks on the y-axis
+            .scale(yScale);  // Apply yScale to the axis
+
+        svg.append("g")
+            .attr("transform", "translate(" + padding + ",0)")  // Position y-axis on the left
+            .call(yAxis);
+
+        // Add label for x-axis (Tree Age in years)
+        svg.append("text")
+            .attr("text-anchor", "middle")
+            .attr("x", w / 2)
+            .attr("y", h - 20)  // Position label below x-axis
+            .text("Tree Age (years)")
+            .attr("font-family", "sans-serif")
+            .attr("font-size", "14px");
+
+        // Add label for y-axis (Tree Height in meters)
+        svg.append("text")
+            .attr("text-anchor", "middle")
+            .attr("transform", "rotate(-90)")  // Rotate label for vertical axis
+            .attr("x", -h / 2)
+            .attr("y", 20)  // Position label to the left of the y-axis
+            .text("Tree Height (m)")
+            .attr("font-family", "sans-serif")
+            .attr("font-size", "14px");
+    </script>
+
+    <br />
+    <footer style="color:grey">COS30045 Data Visualisation<br /> Joe Bloggs</footer>
+
+</body>
+</html>

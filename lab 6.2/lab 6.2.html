@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Data Visualisation" />
+    <meta name="keywords" content="HTML,CSS,D3" />
+    <meta name="author" content="Joshua Sanjay King" />
+    <title>LAB 5.3 D3 Sorting Bars</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script defer src="lab 6.2 javascript.js"></script>
+    <style>
+        /* Style for the button container */
+        .buttons {
+            margin-bottom: 20px;
+        }
+
+        /* Style for the buttons */
+        .chart-button {
+            margin: 5px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+            .chart-button:hover {
+                background-color: #45a049;
+            }
+    </style>
+</head>
+<body>
+    <h1>The D3 Journey starts here...</h1>
+
+    <!-- Buttons Section -->
+    <div class="buttons">
+        <button class="chart-button" onclick="addData()">Add Data</button>
+        <button class="chart-button" onclick="removeData()">Remove Data</button>
+        <button class="chart-button" id="sort">Sort Data</button> <!-- Sort Button -->
+    </div>
+
+    <!-- SVG Container for Chart -->
+    <svg id="chart" width="500" height="300"></svg>
+
+</body>
+</html>

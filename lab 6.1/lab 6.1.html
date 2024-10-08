@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Data Visualisation" />
+    <meta name="keywords" content="HTML,CSS,D3" />
+    <meta name="author" content="Joshua Sanjay King" />
+    <title>LAB 6.1 D3 Adding and Removing Data</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script defer src="lab 6.1 javascript.js"></script>
+    <style>
+        /* Back to Homepage Button */
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 2px solid #000;
+            transition: all 0.3s ease;
+        }
+
+            .back-button:hover {
+                background-color: #fff;
+                color: #000;
+            }
+
+        /* Buttons container */
+        .buttons {
+            margin-bottom: 20px;
+        }
+
+        .chart-button {
+            margin: 5px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+            .chart-button:hover {
+                background-color: #45a049;
+            }
+    </style>
+</head>
+<body>
+    <!-- Back to Homepage Button -->
+    <a href="../homepage.html" class="back-button">Back to Homepage</a>
+    <h1>The D3 Journey starts here...</h1>
+
+    <div class="buttons">
+        <button class="chart-button" onclick="addData()">Add Data</button>
+        <button class="chart-button" onclick="removeData()">Remove Data</button>
+    </div>
+
+    <svg id="chart" width="500" height="300"></svg>
+
+    <br />
+    <footer style="color:grey">COS30045 Data Visualisation<br /> Joe Bloggs</footer>
+</body>
+</html>

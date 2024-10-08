@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Data Visualisation" />
+    <meta name="keywords" content="HTML, JavaScript, D3" />
+    <meta name="author" content="Joshua Sanjay King" />
+    <title>LAB 5.2 D3 Transitions</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script defer src="lab 5.2 javascript.js"></script>
+</head>
+<body>
+    <!-- Back to Homepage Button -->
+    <a href="../homepage.html" style="display: inline-block; margin-bottom: 20px; padding: 10px 20px; background-color: #000; color: #fff; text-decoration: none; border-radius: 5px; border: 2px solid #000; transition: all 0.3s ease;"
+       onmouseover="this.style.backgroundColor='#fff'; this.style.color='#000';"
+       onmouseout="this.style.backgroundColor='#000'; this.style.color='#fff';">
+        Back to Homepage
+    </a>
+
+    <h1>The D3 Journey starts here...</h1>
+
+    <div style="margin-bottom: 20px;">
+        <button style="margin: 5px; padding: 10px; background-color: #4CAF50; color: white; border: none; cursor: pointer; border-radius: 5px;"
+                onclick="showChart('easeCircleIn')">
+            Ease Circle In
+        </button>
+        <button style="margin: 5px; padding: 10px; background-color: #4CAF50; color: white; border: none; cursor: pointer; border-radius: 5px;"
+                onclick="showChart('easeCircleOut')">
+            Ease Circle Out
+        </button>
+        <button style="margin: 5px; padding: 10px; background-color: #4CAF50; color: white; border: none; cursor: pointer; border-radius: 5px;"
+                onclick="showChart('easeElasticOut')">
+            Ease Elastic Out
+        </button>
+    </div>
+
+    <svg id="chart" width="500" height="300"></svg>
+
+    <br />
+    <footer style="color:grey">COS30045 Data Visualisation<br /> Joe Bloggs</footer>
+</body>
+</html>

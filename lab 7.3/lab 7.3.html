@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Data Visualisation" />
+    <meta name="keywords" content="HTML,CSS,D3" />
+    <meta name="author" content="Joshua Sanjay King" />
+    <title>LAB 7.3 D3 Stacked Bar Chart</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script> <!-- D3.js Library -->
+    <script src="lab 7.3 javascript.js" defer></script> <!-- Your JavaScript File -->
+    <style>
+        /* Back to Homepage Button */
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 2px solid #000;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        /* Style for the chart container */
+        .chart-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Back to Homepage Button at the top -->
+    <a href="../homepage.html" class="back-button">Back to Homepage</a>
+
+    <h1>Stacked Bar Chart</h1>
+
+    <!-- Chart container to control the layout -->
+    <div class="chart-container"></div>
+
+</body>
+</html>
